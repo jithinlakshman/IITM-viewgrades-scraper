@@ -36,6 +36,24 @@ def showSem(data: dict, n: int) -> None:
         ]
 
         print(tabulate(table, headers, tablefmt="grid"))
+        
+    """
+
+def BalanceCredits(data: dict) -> None:
+    eng_cred = int(data["Credit Summary"]["Engineering"])
+    hum_cred = int(data["Credit Summary"]["Humanities"])
+    pro_cred = int(data["Credit Summary"]["Professional"])
+    sci_cred = int(data["Credit Summary"]["Science"])
+    oth_cred = int(data["Credit Summary"]["Others"])
+    
+    eng_req = int(48)
+    hum_req = int(27)
+    pro_req = int(200)
+    sci_req = int(86)
+    oth_req = int(72)
+  """
+    
+    
 
 
 if __name__ == "__main__":
