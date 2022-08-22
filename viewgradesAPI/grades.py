@@ -44,7 +44,7 @@ class ViewGrades:
         }
 
         # try to login, will raise connection error
-        loginResponse = self.session.post(url=URL.login, data=postData)
+        loginResponse = self.session.post(url=URL.login, data=postData, verify=False)
 
         # check validity of credentials
         if not loginResponse.ok:
@@ -54,7 +54,7 @@ class ViewGrades:
         if loginResponse.url == URL.index:
             raise CredentialsError
 
-        dataResponse = self.session.get(url=URL.grade)
+        dataResponse = self.session.get(url=URL.grade, verify=False)
 
         if not dataResponse.ok:
             raise ConnectionError
